@@ -27,4 +27,4 @@ const monkeyPoxCaseSchema = new mongoose.Schema({
   }
 })
 
-export const monkePoxCaseModel = mongoose.model("monkeyPoxCase", monkeyPoxCaseSchema)
+export const monkeyPoxCaseModel = mongoose.model("monkeyPoxCase", monkeyPoxCaseSchema)
