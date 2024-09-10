@@ -1,15 +1,16 @@
 version: '3.8'
 
 services:
-  monomap-api:
-    container_name: monomap-api
-    build: .
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mongo
-    environment:
-      PORT: ${PORT}
+  # monomap-api:
+  #   container_name: monomap-api
+  #   build: .
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - mongo
+  #   environment:
+  #     PORT: ${PORT}
+  #     MONGO_URL_DOCKER: ${MONGO_URL_DOCKER}
   mongo:
     image: mongo
     container_name: mongo-monomap
