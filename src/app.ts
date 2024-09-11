@@ -5,7 +5,6 @@ import { AppRoutes } from "./presentation/routes";
 import { emailJob } from "./domain/jobs/email.job";
 
 const app = express();
-
 app.use(express.json());
 app.use(AppRoutes.routes);
 
