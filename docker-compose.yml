@@ -3,7 +3,7 @@ version: '3.8'
 services:
   monomap-api:
     container_name: monomap-api
-    build: .
+    image: iscampoos/monomapapi:latest
     ports:
       - "3000:3000"
     depends_on:
