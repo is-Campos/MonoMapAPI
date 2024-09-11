@@ -11,7 +11,7 @@ app.use(AppRoutes.routes);
 (async () => {
   await MongoDatabase.connect({
     dbName: "MonoMapAPI",
-    mongoURL: envs.MONGO_URL_DOCKER ?? "",
+    mongoURL: envs.MONGO_URL ?? "",
   });
 })();
 
