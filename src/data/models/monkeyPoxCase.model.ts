@@ -15,11 +15,19 @@ const monkeyPoxCaseSchema = new mongoose.Schema({
   },
   genre : {
     type: String,
-    required: true
+    required: true,
+    lowercase:true,
+    enum: ["male","female","other"]
   },
   age : {
     type: Number,
-    required: true
+    required: true,
+    min:0,
+    max:150,
+    validate : {
+      validator : Number.isInteger,
+      message   : '{VALUE} is not an integer value'
+    }
   },
   creationDate : {
     type: Date,
