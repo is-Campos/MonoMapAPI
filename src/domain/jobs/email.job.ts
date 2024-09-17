@@ -2,6 +2,7 @@ import cron from "node-cron";
 import { EmailService } from "../services/email.service";
 import { monkeyPoxCaseModel } from "../../data/models/monkeyPoxCase.model";
 import { generateCaseEmailTemplate } from "../templates/email.template";
+import { envs } from "../../config/envs.plugin";
 
 export const emailJob = () => {
   const emailService = new EmailService();
@@ -19,7 +20,7 @@ export const emailJob = () => {
           console.log(monkeyPoxCase);
           try {
             await emailService.sendEmail({
-              to: "ivano.cs89@gmail.com",
+              to: envs.MAIL_USER,
               subject: "New Monkey Pox Case",
               htmlBody: generateCaseEmailTemplate(
                 monkeyPoxCase.lat, monkeyPoxCase.lng, monkeyPoxCase.genre, monkeyPoxCase.age, monkeyPoxCase.creationDate
